@@ -3,20 +3,20 @@ title: "Coding Challenge 4"
 author: "Theresa Quintana"
 date: "2025-02-27"
 output:
+  md_document:
+      variant: gfm
   word_document:
-  pdf_document:
   html_document:
     toc: true
     toc_float: true
-  md_document:
-      variant: gfm
+  pdf_document:
 ---
 
 The data used in this project was provided by: Noel, Z.A., Roze, L.V., Breunig, M., Trail, F. 2022. Endophytic fungi as promising biocontrol agent to protect wheat from Fusarium graminearum head blight. Plant Disease.
 [See the paper here](https://doi.org/10.1094/PDIS-06-21-1253-RE)
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 ```
 
 
