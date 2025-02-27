@@ -3,16 +3,25 @@ title: "Coding Challenge 4"
 author: "Theresa Quintana"
 date: "2025-02-27"
 output:
-  word_document:
   md_document:
       variant: gfm
-  pdf_document:
+  word_document:
   html_document:
     toc: true
     toc_float: true
+  pdf_document:
 ---
 
-The data used in this project was provided by: Noel, Z.A., Roze, L.V., Breunig, M., Trail, F. 2022. Endophytic fungi as promising biocontrol agent to protect wheat from Fusarium graminearum head blight. Plant Disease.
+Question 1. Explain the following
+
+a. YAML (yet another markup language) header: a human-readable data format used for configuring R Markdown. It appears as a metadata block at the beginning of an R Markdown file that specifies the final file format, styling, and other settings.
+
+b. Literate programming: combines code and documentation/explanation in a human-readable format. This helps make programs easier to understand because writing code is not just for machines!
+
+You can find the corresponding documents to this assignement on my GitHub: 
+[Theresa's Coding Challenge 4 Github Access](https://github.com/taq-poly/CodingChallenge4.git)
+
+The data used in this assignment was provided by: Noel, Z.A., Roze, L.V., Breunig, M., Trail, F. 2022. Endophytic fungi as promising biocontrol agent to protect wheat from Fusarium graminearum head blight. Plant Disease.
 [See the paper here](https://doi.org/10.1094/PDIS-06-21-1253-RE)
 
 ```{r setup, include=FALSE}

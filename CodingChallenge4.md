@@ -1,7 +1,22 @@
-The data used in this project was provided by: Noel, Z.A., Roze, L.V.,
-Breunig, M., Trail, F. 2022. Endophytic fungi as promising biocontrol
-agent to protect wheat from Fusarium graminearum head blight. Plant
-Disease. [See the paper
+Question 1. Explain the following
+
+1.  YAML (yet another markup language) header: a human-readable data
+    format used for configuring R Markdown. It appears as a metadata
+    block at the beginning of an R Markdown file that specifies the
+    final file format, styling, and other settings.
+
+2.  Literate programming: combines code and documentation/explanation in
+    a human-readable format. This helps make programs easier to
+    understand because writing code is not just for machines!
+
+You can find the corresponding documents to this assignement on my
+GitHub: [Theresa’s Coding Challenge 4 Github
+Access](https://github.com/taq-poly/CodingChallenge4.git)
+
+The data used in this assignment was provided by: Noel, Z.A., Roze,
+L.V., Breunig, M., Trail, F. 2022. Endophytic fungi as promising
+biocontrol agent to protect wheat from Fusarium graminearum head blight.
+Plant Disease. [See the paper
 here](https://doi.org/10.1094/PDIS-06-21-1253-RE)
 
 ``` r
@@ -39,7 +54,7 @@ Question_2 <- ggplot(mycotoxin, aes(x = Treatment, y = DON, color = Cultivar)) +
 Question_2
 ```
 
-![](figures/Boxplot_DON-1.png)<!-- -->
+![](CodingChallenge4_files/figure-gfm/Boxplot_DON-1.png)<!-- -->
 
 \#Question 3a - Change the y-variable to plot X15ADON. The y-axis label
 should now be “15ADON”.
@@ -56,7 +71,7 @@ Question_3a <- ggplot(mycotoxin, aes(x = Treatment, y = X15ADON, color = Cultiva
 Question_3a
 ```
 
-![](figures/Boxplot_X15ADON-1.png)<!-- -->
+![](CodingChallenge4_files/figure-gfm/Boxplot_X15ADON-1.png)<!-- -->
 
 \#Question 3b - Change the y-variable to plot MassperSeed_mg. The y-axis
 label should now be “Seed Mass (mg)”.
@@ -73,7 +88,7 @@ Question_3b <- ggplot(mycotoxin, aes(x = Treatment, y = MassperSeed_mg, color = 
 Question_3b
 ```
 
-![](figures/Boxplot_MassperSeed-1.png)<!-- -->
+![](CodingChallenge4_files/figure-gfm/Boxplot_MassperSeed-1.png)<!-- -->
 
 \#Question 5 - Use geom_pwc() to add t.test pairwise comparisons to the
 three plots made above. Save each plot as a new R object, and combine
@@ -100,4 +115,4 @@ Question_5Combo <- ggarrange(Stats_Question_2, Stats_Question3a, Stats_Question3
 Question_5Combo
 ```
 
-![](figures/Combined-1.png)<!-- -->
+![](CodingChallenge4_files/figure-gfm/Combined-1.png)<!-- -->
