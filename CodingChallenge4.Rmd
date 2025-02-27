@@ -16,7 +16,7 @@ The data used in this project was provided by: Noel, Z.A., Roze, L.V., Breunig, 
 [See the paper here](https://doi.org/10.1094/PDIS-06-21-1253-RE)
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.path = "figures/")
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
 
