@@ -3,20 +3,20 @@ title: "Coding Challenge 4"
 author: "Theresa Quintana"
 date: "2025-02-27"
 output:
+  word_document:
   md_document:
       variant: gfm
-  word_document:
+  pdf_document:
   html_document:
     toc: true
     toc_float: true
-  pdf_document:
 ---
 
 The data used in this project was provided by: Noel, Z.A., Roze, L.V., Breunig, M., Trail, F. 2022. Endophytic fungi as promising biocontrol agent to protect wheat from Fusarium graminearum head blight. Plant Disease.
 [See the paper here](https://doi.org/10.1094/PDIS-06-21-1253-RE)
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.path = "figures/")
 ```
 
 
@@ -37,8 +37,10 @@ mycotoxin <- read.csv("MycotoxinData.csv", na.strings = "na")
 #Question 2 - Change the factor order level so that the treatment “NTC” is first, followed by “Fg”, “Fg + 37”, “Fg + 40”, and “Fg + 70". 
 ```{r}
 mycotoxin$Treatment <- factor(mycotoxin$Treatment, levels = c("NTC", "Fg", "Fg + 37", "Fg + 40", "Fg + 70"), ordered = TRUE)
-                    
+```
 
+#Question 2 Boxplot
+```{r Boxplot_DON}
 Question_2 <- ggplot(mycotoxin, aes(x = Treatment, y = DON, color = Cultivar)) +
   geom_boxplot() +
   geom_point(position = position_jitterdodge(jitter.width = 0.6)) +
@@ -51,7 +53,7 @@ Question_2
 ```
 
 #Question 3a - Change the y-variable to plot X15ADON. The y-axis label should now be “15ADON”.
-```{r}
+```{r Boxplot_X15ADON}
 Question_3a <- ggplot(mycotoxin, aes(x = Treatment, y = X15ADON, color = Cultivar)) +
   geom_boxplot() +
   geom_point(position = position_jitterdodge(jitter.width = 0.6)) +
@@ -64,7 +66,7 @@ Question_3a
 ```
 
 #Question 3b - Change the y-variable to plot MassperSeed_mg. The y-axis label should now be “Seed Mass (mg)”. 
-```{r}
+```{r Boxplot_MassperSeed}
 Question_3b <- ggplot(mycotoxin, aes(x = Treatment, y = MassperSeed_mg, color = Cultivar)) +
   geom_boxplot() +
   geom_point(position = position_jitterdodge(jitter.width = 0.6)) +
@@ -78,18 +80,18 @@ Question_3b
 
 
 #Question 5 - Use geom_pwc() to add t.test pairwise comparisons to the three plots made above. Save each plot as a new R object, and combine them again with ggarange as you did in question 4. 
-```{r}
+```{r Combined}
 Stats_Question_2 <- Question_2 +
   geom_pwc(aes(group = Treatment), method = "t_test", label = "p.adj.signif")
-Stats_Question_2
+#Stats_Question_2
 
 Stats_Question3a <- Question_3a +
   geom_pwc(aes(group = Treatment), method = "t_test", label = "p.adj.signif")
-Stats_Question3a
+#Stats_Question3a
   
 Stats_Question3b <- Question_3b +
   geom_pwc(aes(group = Treatment), method = "t_test", label = "p.adj.signif")
-Stats_Question3b
+#Stats_Question3b
 
 #combination graph
 Question_5Combo <- ggarrange(Stats_Question_2, Stats_Question3a, Stats_Question3b, labels = "auto",
